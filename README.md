@@ -1,5 +1,7 @@
 # Dungeon_gen
 Creating a dungeon is fairly strait forward.<br />
+#include"dungeon.h"<br /><br />
+use srand() in your programs initialization either with time(0) or whatever seed you want.<br /><br />
 Dungeon dung;<br />
 Map_Width = 64;<br />
 Map_Height = 64;<br />
@@ -8,7 +10,11 @@ dung.gen_blocks();<br />
 dung.gen_halls(0); //The 0 can be replaced with a random number from 0 to 255 it selects which room to start the depeth first search<br />
 <br />
 A 64x64 Dungeon produces a dungeon with 1024 x 1024 rooms.<br />
-The dungeon it can produce can look like this. <br />
+The dungeon data is stored in dungeon.tiles. It is a single array. Row length is 11 tiles per room 16 rooms per block times dungeon width. so use 176 x dungeon width. Height works the same way.<br />
+The tile data is only 8 bits used for determining a few things such as floor and wallks. The center of the room build area can be set to another value if needed.<br />
+You will find that in block.cpp lines 32-34 commented out.<br />
+<br />
+The dungeon it can produce can look like this. You will need to provide your own textures and so on. <br />
 ![alt text](https://github.com/hayesgr/Dungeon_gen/blob/main/DungeonExtreme01.png?raw=true)
 
 ## How it works
