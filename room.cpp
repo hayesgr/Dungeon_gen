@@ -14,14 +14,14 @@ void room_gen(Room &room,int x, int y){
     //bx = bx-tx>3?bx:tx+3;
     if(bx-tx<4){
         r = rand()%2;
-        bx = r?tx+4:bx;
-        tx = r?tx:bx-4;
+        bx = r==0?tx+4:bx;
+        tx = r==1?tx:bx-4;
     }
     //by = by-ty>3?by:ty+3;
     if(by-ty<4){
         r=rand()%2;
-        by = r?ty+4:by;
-        ty = r?ty:by-4;
+        by = r==0?ty+4:by;
+        ty = r==1?ty:by-4;
     }
     room.x=tx;room.y=ty;
     room.w=(bx)-(tx);room.h=(by)-(ty);
