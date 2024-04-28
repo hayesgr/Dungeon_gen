@@ -11,8 +11,8 @@ void room_gen(Room &room,int x, int y){
     int bx = bot[rand()%20];//rand()%5+6;
     int by = bot[rand()%20];//rand()%5+6;
     int r=0;
-    //bx = bx-tx>3?bx:tx+3;
     r = rand()%2;
+    //bx = bx-tx>3?bx:tx+3;
     if(bx-tx<4){
         bx = r==0?tx+4:bx;
         tx = r==0?tx:bx-4;
